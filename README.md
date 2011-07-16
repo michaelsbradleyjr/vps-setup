@@ -2,17 +2,23 @@
 
 Over the past few years, whenever I spin up a new Linux VPS or local VM, I often look back to the same trusty Internet "articles" I've referenced time and again. My concern is to immediately tighten up security, install some packages, and set up a "normal user" environment with those tools that form the most basic elements of my workflow.
 
-Since I don't do this from scratch everyday, I need to refer back to the familiar docs to make sure I haven't missed a step.
+Since I don't do this from scratch everyday, I need to refer back to the familiar docs to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
 
-To keep things a bit simpler, this README will collect the few basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
-
-This documentation will by no means be exhaustive, but should provide a fresh Linux VPS/VM with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on linux + node.js.
+This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on linux + node.js.  For those who stumble upon this resource: I won't explain every command or justify each step will be -- Google and the "man pages" are good friends.
 
 Note that my reference point at the time of writing is Ubuntu Linux 11.04+
 
 # VPS spin up / local VM os install / local VM clone
 
-The assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. At this point I know the root password and can either access the VPS's console or login via ssh.
+When I say "VPS" I mean a *virtual private server* provided by the likes of [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/), [Slicehost](http://www.slicehost.com/) and [Linode](http://www.linode.com/index.cfm).
+
+When I say "local VM" I mean a *virtual machine* run within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
+
+For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server out in the cloud *or* one running within your local machine.
+
+My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
+
+At this point I know the root password and can either access the VPS's console or login via ssh.
 
 # Login as root and change the root password
 
