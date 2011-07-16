@@ -282,7 +282,7 @@ I've been using the same directory naming conventions for awhile, so I'll do som
 
 # That's it!
 
-At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific things on my new VPS.
+At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments and work on my new VPS.
 
 
 
