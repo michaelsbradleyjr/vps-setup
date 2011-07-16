@@ -15,24 +15,29 @@ The assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04
 # Login as root and change the root password
 
     # passwd
+    ...
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
 # Add a "normal user"
 
     # adduser michael
+    ...
 
 Set another ridiculously long password and store it in my local password manager along with the other notes for the VPS.
 
 # Visudo
 
     # visudo
+    ...
 
 For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated. One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should not be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
     ...
     
     %sudo ALL=NOPASSWD: ALL
+
+Close and save -- make sure to confirm the save.
 
 # Add my normal user to group sudo
 
