@@ -20,15 +20,15 @@ Set some ridiculously long password and store it in my password manager, along w
 
 # Add a "normal user"
 
-    $ adduser michael
+    # adduser michael
 
 Set another ridiculously long password and store it in my password manager along with the other notes for the VPS.
 
 # Visudo
 
-    $ visudo
+    # visudo
 
-For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), most of the security concerns are alleviated.
+For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated. One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should not be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
     ...
     
@@ -36,5 +36,5 @@ For convenience, modify the sudoers file so that members of group sudo do not ha
 
 # Add my normal user to group sudo
 
-    usermod -a -G sudo michael
+    # usermod -a -G sudo michael
 
