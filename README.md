@@ -14,13 +14,15 @@ When I say "VPS" I mean a *virtual private server* provided by the likes of [Rac
 
 When I say "local VM" I mean a *virtual machine* run within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
 
-For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server out in the cloud *or* one running within your local machine.
+For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server out in the cloud *or* one running within my local machine.
 
 My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
 At this point I know the root password and can either access the VPS's console or login via ssh.
 
 # Login as root and change the root password
+
+(`#` denotes root prompt)
 
     # passwd
     ...
@@ -82,6 +84,9 @@ I can double-check with:
 # Switch to the normal user and setup .ssh
 
     # su - michael
+
+(`$` denotes normal user prompt)
+
     $ mkdir .ssh && touch .ssh/authorized_keys
     $ chmod 700 .ssh && chmod 600 .ssh/*
     $ vim .ssh/authorized_keys
