@@ -2,7 +2,7 @@
 
 Over the past few years, whenever I spin up a new Linux VPS or local VM, I often look back to the same trusty Internet "articles" I've referenced time and again. My concern is to immediately tighten up security, install some packages, and set up a "normal user" environment with those tools that form the most basic elements of my workflow.
 
-Since I don't do this from scratch everyday, I need to refer back to the familiar docs to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
+Since I don't do this from scratch every day, I need to refer back to those familiar docs, spread across the Web, to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
 
 This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on linux + node.js.  For those who stumble upon this resource: I won't explain every command or justify each step will be -- Google and the "man pages" are good friends.
 
