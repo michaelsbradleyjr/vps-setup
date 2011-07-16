@@ -160,7 +160,9 @@ Now try to connect once again via ssh, e.g. from my local machine:
 
 If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
 
-If I made a mistake, then I'll need access to the VPS's console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting companies customer support site.
+If I made a mistake I won't be able to login, so I'll need access to the VPS's console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting company's customer support site.  If I'm setting up a new VM, then my virtualization software will give me access to the console.
+
+In either case, after logging in through the console login I'll need to check the firewall rules and related files (see notes above), and the `sshd_config` file, for mistakes I may have made; and I may need to peek in the system logs for clues.
 
 # Update packages and run safe-upgrade
 
@@ -297,7 +299,7 @@ I've been using the same directory naming conventions for awhile, so I'll do som
 
 # That's it!
 
-At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS.
+At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS / VM.
 
 
 
