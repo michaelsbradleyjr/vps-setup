@@ -102,12 +102,18 @@ Return to the root shell and open the config file for the ssh server:
 ## Restart sshd
 
     # service ssh restart
+    ...
+    
+It should report back something like:
+
+    ssh start/running, process 14930
 
 ## Attempt to login remotely
 
 Now from my local machine I'll do something like:
 
     $ ssh -p 12345 michael@x.x.x.x
+    ...
 
 If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
 
@@ -116,6 +122,7 @@ If I completed the above steps correctly, I should be logged in as my normal use
 ## Create the rules set
 
     # vim /etc/iptables.up.rules
+    ...
 
 For the most basic firewall protection, I copy in the rules set you can find in this repo, next to this README.md file, in the text file `iptables.up.rules`.
 
@@ -149,6 +156,7 @@ Reboot the VPS and make sure I can login remotely after a minute or so:
 Now try to connect once again via ssh, e.g. from my local machine:
 
     $ ssh -p 12345 michael@x.x.x.x
+    ...
 
 If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
 
@@ -170,6 +178,7 @@ At this point I should be logged in as my normal user, ready to do some further 
 ...write more
 
     $ sudo aptitude install build-essential libssl-dev bwm-ng zsh-beta git-core dnsutils whois rsync htop iotop iftop tmux
+    ...
 
 ...write more
 
@@ -178,6 +187,7 @@ At this point I should be logged in as my normal user, ready to do some further 
 ...write more
 
     $ git clone git://github.com/creationix/nvm.git ~/.nvm
+    ...
 
 I then paste the following into a file called `~/.sh_nvm`:
 
@@ -254,6 +264,7 @@ Upon the last logout / login cycle I probably got a warning like:
 
     ...
     v0.5.1 version is not installed yet
+    ...
 
 
 That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `.sh_nvm`.  So now I'll install it.
