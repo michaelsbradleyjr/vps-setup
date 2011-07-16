@@ -5,7 +5,7 @@
 -A INPUT -i lo -j ACCEPT
 -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
--A INPUT -p tcp -m multiport --destination-ports 80,443,65432 -j ACCEPT
+-A INPUT -p tcp -m multiport --destination-ports 80,443,12345 -j ACCEPT
 -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
