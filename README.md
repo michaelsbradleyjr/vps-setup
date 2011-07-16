@@ -27,13 +27,13 @@ At this point I know the root password and can either access the VPS's console o
     # passwd
     ...
 
-*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor ]*
+*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; within a text editor env, it will indicate there is or may be some text above and/or below the contents in which I'm interested ]*
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
 # Set the hostname
 
-...write more
+I'll want to set the VPS's hostname and create a matching entry in `/etc/hosts`:
 
     # vim /etc/hostname
     ...
@@ -49,13 +49,31 @@ Now edit `/etc/hosts`
 And add this (on the 2nd line, probably):
 
     ...
-    127.0.0.1     myvps
+    127.0.1.1     myvps
+    
+    ...
 
-Finally, run the following comamnd:
+The hostname, in this case `myvps`, should match in both files, `/etc/hostname` and `/etc/hosts`.
+
+Depedning on the environment (e.g. Linode vs. Rackspace Cloud) I may also want to comment out a line in `/etc/default/dhcpd`:
+
+    # vim /etc/default/dhcpd
+    ...
+
+Put a `#` in front of the `SET_HOSTNAME` directive:
+
+    ...
+    # SET_HOSTNAME='yes'
+
+    ...
+
+Now I'm ready to set the hostname:
 
     # hostname -F
 
 # Add a "normal user"
+
+I don't want to spend most of my time authenticated as root, so I'll create a normal user account:
 
     # adduser michael
     ...
@@ -64,14 +82,18 @@ Set another ridiculously long password and store it in my local password manager
 
 # Visudo
 
+The sudo utility will my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
+
     # visudo
     ...
 
-For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated. One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
+For convenience, modify sudoers so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated.
+
+One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
     ...
-    
     %sudo ALL=NOPASSWD: ALL
+    ...
 
 Close and save -- make sure to confirm the save.
 
@@ -82,6 +104,11 @@ Close and save -- make sure to confirm the save.
 I can double-check with:
 
     # groups michael
+    ...
+
+I should seem something like:
+
+    michael : michael sudo
 
 # Switch to the normal user and setup .ssh
 
