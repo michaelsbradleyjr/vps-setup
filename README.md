@@ -243,7 +243,7 @@ This command may prompt me for my user's password, which I'll need to copy/paste
     local$ ssh -p 12345 michael@x.x.x.x
     ...
 
-If I completed the above steps correctly, then with the "candy" themse, I should see a two-line prompt that looks like:
+If I completed the above steps correctly, then with the "candy" theme, I should see a two-line prompt that looks like:
 
     michael@myvps [09:36:21] [~] 
     -> % 
@@ -261,7 +261,7 @@ That's NVM telling me I haven't installed the version of node.js that I told it 
     $ nvm install v0.5.1
     ...
 
-That will take some time, but after it's completed, I'll logout / login and the notice from NVM will have changed to:
+That will take some time to download and compile, but after it's completed, I'll logout / login and the notice from NVM will have changed to:
 
     ...
     Now using node v0.5.1
@@ -284,7 +284,7 @@ I've been using the same directory naming conventions for awhile, so I'll do som
 
 # That's it!
 
-At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments and work on my new VPS.
+At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS.
 
 
 
