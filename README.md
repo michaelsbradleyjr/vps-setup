@@ -22,10 +22,12 @@ At this point I know the root password and can either access the VPS's console o
 
 # Login as root and change the root password
 
-(`#` denotes root prompt)
+`#` denotes root shell prompt:
 
     # passwd
     ...
+
+`...` beneath a prompt+command indicates the command will have some output, ask for further input or invoke some interactive environment (e.g. the `vim` text editor).
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
@@ -85,7 +87,7 @@ I can double-check with:
 
     # su - michael
 
-(`$` denotes normal user prompt)
+`$` denotes normal user prompt:
 
     $ mkdir .ssh && touch .ssh/authorized_keys
     $ chmod 700 .ssh && chmod 600 .ssh/*
