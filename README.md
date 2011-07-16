@@ -160,7 +160,7 @@ Now try to connect once again via ssh, e.g. from my local machine:
 
 If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
 
-If I made a mistake, then I'll need access to the VPSs console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting companies customer support site.
+If I made a mistake, then I'll need access to the VPS's console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting companies customer support site.
 
 # Update packages and run safe-upgrade
 
