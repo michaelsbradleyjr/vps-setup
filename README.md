@@ -55,7 +55,7 @@ Set another ridiculously long password and store it in my local password manager
     # visudo
     ...
 
-For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated. One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should not be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
+For convenience, modify the sudoers file so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated. One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
     ...
     
@@ -79,11 +79,13 @@ I can double-check with:
     $ vim .ssh/authorized_keys
     ...
 
-At this point I load in (copy/paste) the public key/s from the machine/s I'll be using to login to the VPS viah ssh.
+At this point I copy/paste the public key/s from the machine/s I'll be using to access the new VPS via ssh.
 
 If I'll be connecting from the VPS to other machines, I can do:
 
     $ ssh-keygen -b 4096 -t rsa
+
+Now I should have `id_rsa.pub` and `id_rsa` files under `~/.ssh`.
 
 # Lock down sshd
 
