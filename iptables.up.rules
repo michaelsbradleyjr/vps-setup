@@ -1,0 +1,9 @@
+*filter
+
+-P INPUT DROP
+-P FORWARD DROP
+-A INPUT -p tcp -m multiport --destination-ports 80,443,12345 -j ACCEPT
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+COMMIT

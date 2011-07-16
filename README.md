@@ -43,6 +43,10 @@ Close and save -- make sure to confirm the save.
 
     # usermod -a -G sudo michael
 
+I can double-check with:
+
+    # groups michael
+
 # Switch to the normal user and setup .ssh
 
     # su - michael
@@ -51,8 +55,46 @@ Close and save -- make sure to confirm the save.
     $ vim .ssh/authorized_keys
     ...
 
-At this point I load in the public key/s from the machine/s I'll be using to login to the VPS viah ssh.
+At this point I load in (copy/paste) the public key/s from the machine/s I'll be using to login to the VPS viah ssh.
 
+If I'll be connecting from the VPS to other machines, I can do:
 
+    $ ssh-keygen -b 4096 -t rsa
 
+# Lock down sshd
 
+Return to the root shell and open the config file for the ssh server:
+
+    $ exit
+    # vim /etc/ssh/sshd_config
+    ...
+
+...
+
+# Basic firewall
+
+## Create the rules set
+
+    # vim /etc/iptables.up.rules
+
+For the most basic firewall protection, I copy in the rules set you can find in this repo, next to this README.md file, in the text file `iptables.up.rules`.
+
+Note that port `12345` corresponds to the sshd port I set in the previous section. In practice, I usually set it to something that doesn't conflict with other things, in the neihborhood of 1024 - 65536. :-)  I make sure to note the port number in my password manager, along with the rest of the notes for this VPS.
+
+## Load the rules
+
+    # iptables -F && iptables-restore < /etc/iptables.up.rules
+    
+## Set the rules to load upon re/boot
+
+    # vim /etc/network/if-pre-up.d/iptables
+
+Paste this into the new file:
+
+    #!/bin/sh
+    /sbin/iptables-restore < /etc/iptables.up.rules
+    
+Save and make the script executable:
+
+    # chmod +x /etc/network/if-pre-up.d/iptables
+    
