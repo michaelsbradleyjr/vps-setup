@@ -185,7 +185,7 @@ Setting up a simple firewall with `iptables` is a good idea, especially for a VP
 
 For the most basic firewall protection, I copy in the rules set you can find in this repo next to `README.md`, in the text file [iptables.up.rules](https://github.com/michaelsbradleyjr/vps-setup/blob/master/iptables.up.rules).
 
-Note that port `12345` corresponds to the sshd port I set in the previous section.
+Note that port `12345` corresponds to the sshd `Port` I set in the previous section.
 
 ## Load the rules
 
@@ -216,6 +216,8 @@ I should seem something like:
 
 ## Set the rules to load upon re/boot
 
+I need to create a file:
+
     # vim /etc/network/if-pre-up.d/iptables
     ...
 
@@ -230,7 +232,7 @@ Save and make the script executable:
     
 ## Moment of truth
 
-Reboot the VPS and make sure I can login remotely after a minute or so:
+I'll now reboot the VPS and make sure I can login remotely after a minute or so:
 
     # reboot
     ...
