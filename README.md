@@ -12,7 +12,7 @@ Note that my reference point at the time of writing is [Ubuntu Linux 11.04 - Nat
 
 When I say "VPS" I mean a *virtual private server* provided by the likes of [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/), [Slicehost](http://www.slicehost.com/) and [Linode](http://www.linode.com/index.cfm).
 
-When I say "local VM" I mean a *virtual machine* run within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
+When I say "local VM" I mean a *virtual machine* running within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
 
 For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *or* one running on my local machine.
 
