@@ -411,7 +411,7 @@ I've been using the same directory-naming conventions for awhile, so I'll do som
 
 # That's it!
 
-At this point I'm done with my basic setup and security lockdown, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS / VM.
+At this point I'm done with my basic setup and security lockdown, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS.
 
 # Author
 
