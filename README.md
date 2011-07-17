@@ -45,6 +45,7 @@ Enter a single line of text. I usually indicate a short name that I'll commonly 
 Now edit `/etc/hosts`
 
     # vim /etc/hosts
+    ...
 
 And add this (on the 2nd line, probably):
 
@@ -266,8 +267,9 @@ At this point I should be logged in as my normal user, ready to do some further 
 If I want to set the server's clock to correspond with my local timezone, I'll do:
 
     dpkg-reconfigure tzdata
+    ...
     
-Note that `GMT` / `UTC` may be preferrable, I find it depends on what I'll be doing with the VPS.
+Select the appropriate timezone through the ncurses-based menu. Note that `GMT` / `UTC` may be preferrable, I find it depends on what I'll be doing with the VPS.
 
 # Install some helpful things
 
@@ -302,6 +304,7 @@ Zsh is certainly not a prerequisite for NVM, but I like what it does for me, esp
 I included Zsh in the "helpful things" list above, but I could also install it separately:
 
     $ sudo aptitude install zsh-beta
+    ...
 
 I tend to install the "beta" release of zsh.
 
@@ -349,6 +352,7 @@ I may or may not populate `.sh_aliases` at this time, but it will probably end u
 ## Set zsh as my normal user's default shell
 
     $ chsh -s /bin/zsh
+    ...
 
 This command may prompt me for my user's password, which I'll need to copy/paste from the notes in my local password manager.
 
@@ -378,6 +382,7 @@ That's NVM telling me I haven't installed the version of node.js that I told it 
 NOTE:  In order to compile node.js, I'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
 
     -> % sudo aptitude install build-essential libssl-dev
+    ...
 
 With those prerequisites installed, I'm ready to run install node.js with NVM's help:
 
@@ -395,6 +400,7 @@ NVM installs [npm](http://npmjs.org/), a (the!) node.js package manager, along w
 I can check the install locations of node.js and npm with:
 
     -> % which node && which npm
+    ...
 
 I expect to see something like this:
 
