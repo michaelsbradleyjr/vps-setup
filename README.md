@@ -6,7 +6,7 @@ Since I don't do this from scratch every day, I need to refer back to those fami
 
 This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
 
-Note that my reference point at the time of writing is [Ubuntu Linux 11.04 - Natty Narwhal](http://releases.ubuntu.com/11.04/).
+Note that my reference point at the time of writing is [Ubuntu Linux 11.04 Server - Natty Narwhal](http://releases.ubuntu.com/11.04/).
 
 # VPS spin up / local VM os install / local VM clone
 
@@ -16,7 +16,7 @@ When I say "local VM" I mean a *virtual machine* running within some local (desk
 
 For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *-or-* one running on my local machine.
 
-My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
+My assumption is that the VPS is a fresh install of Ubuntu Linux Server, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
 **At this point I know the root password and can either access the VPS's console or can login via ssh.**
 
@@ -418,6 +418,13 @@ I've been using the same directory-naming conventions for awhile, so I'll do som
 # That's it!
 
 At this point I'm done with my basic setup and security lockdown, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS.
+
+# Further reading
+
+Both Slicehost and Linode offer an impressive collection of free helpful docs from which you can learn more about administrating a Linux VPS:
+
+http://articles.slicehost.com/
+http://library.linode.com/
 
 # Author
 
