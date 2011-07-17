@@ -8,7 +8,7 @@ This documentation will by no means be exhaustive, but should provide a fresh Li
 
 Note that my reference point at the time of writing is [Ubuntu Linux Server 11.04 - Natty Narwhal](http://releases.ubuntu.com/11.04/).
 
-# VPS spin up / local VM os install
+# Linxu VPS spin up / local VM os install
 
 When I say "VPS" I mean a *virtual private server* provided by the likes of [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/), [Slicehost](http://www.slicehost.com/) and [Linode](http://www.linode.com/index.cfm).
 
