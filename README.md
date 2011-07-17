@@ -293,6 +293,10 @@ That's probably fine, but if something I didn't expect or want was returned, I c
 
 Changes will not be noticeable until I logout / login again. A [complete listing](http://www.iana.org/assignments/language-subtag-registry) of language and region codes is hosted on IANA's website.
 
+# Automatic updates
+
+I may or may not configure my VPS for some level of automatic updates, e.g. for security updates.  In any case, the (version specific) [instructions for doing so](https://help.ubuntu.com/11.04/serverguide/C/automatic-updates.html) may be found on Ubuntu's official help site.
+
 # Install some helpful things
 
 This new VPS is probably bare-bones in terms of installed software, so I'll now add some basic packages:
