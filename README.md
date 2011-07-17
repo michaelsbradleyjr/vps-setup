@@ -403,7 +403,7 @@ NVM installs [npm](http://npmjs.org/), a (the!) node.js package manager, along w
 
 I can check the install locations of node.js and npm with:
 
-    -> % which node && which npm
+    -> % which node npm
     ...
 
 I expect to see something like this:
