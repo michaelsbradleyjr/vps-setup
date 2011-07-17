@@ -102,7 +102,7 @@ One caveat to mention -- any publicly accessible network services (e.g. node.js 
 
 
 
-# Add normal user to group sudo
+# Add the normal user to group sudo
 
     # usermod -a -G sudo michael
 
