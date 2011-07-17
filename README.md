@@ -96,7 +96,7 @@ For convenience, modify sudoers so that members of group sudo do not have to ent
 
 Close and save -- make sure to confirm the save.
 
-This setting is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated.
+This setting is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns over doing this are mostly alleviated.
 
 One caveat to mention -- any publicly accessible network services (e.g. node.js scripts hosted on a cloud server) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
@@ -149,7 +149,7 @@ Return to the root shell and open the config file for the SSH server:
     # vim /etc/ssh/sshd_config
     ...
 
-I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `sshd_config` file, but indicates *only* my typical changes or additions to the default settings:
+I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `/etc/ssh/sshd_config` file, but indicates *only* my typical changes or additions to the default settings:
 
     Port 12345
     PermitRootLogin no
