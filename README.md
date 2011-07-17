@@ -280,6 +280,8 @@ This new VPS is probably bare-bones in terms of installed software, so I'll now 
 
 I may end up installing lots of additional packages, but the above list always serves me as a good starting point.
 
+From this point forward, I'll assume that at last the `git-core` package is installed.
+
 # Install NVM
 
 Since I develop and deploy mainly with node.js, I like to install Tim Caswell's [NVM](https://github.com/creationix/nvm) tool to make my life easier:
