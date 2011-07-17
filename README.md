@@ -249,7 +249,7 @@ Now try to connect once again via ssh, e.g. from my local machine:
 
 If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
 
-If I made a mistake I probably won't be able to login via ssh, so I'll need access to the VPS's console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting company's customer support site.  If I'm setting up a local VM, then my virtualization software will give me access to the console.
+If I made a mistake I probably won't be able to login via ssh, so I'll need access to the VPS's console, which is usually provided through some browser applet or special SSH front-end, as indicated in the hosting company's customer support site.  If I'm setting up a local VM, then my virtualization software will give me access to the console.
 
 In either case, after logging in through the console I'll need to check the firewall rules and related files (see notes above), and the `/etc/ssh/sshd_config` file, for mistakes I may have made; and I may need to peek in the system logs for clues.
 
