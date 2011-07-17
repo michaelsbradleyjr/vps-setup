@@ -81,7 +81,7 @@ I don't want to spend most of my time authenticated as root, so I'll create a no
 
 Set another ridiculously long password and store it in my local password manager along with the other notes for the VPS.
 
-# Visudo
+# Customize sudoers
 
 The `sudo` utility will enable my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
 
