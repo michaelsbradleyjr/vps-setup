@@ -250,7 +250,7 @@ In either case, after logging in through the console I'll need to check the fire
 
 # Update packages and run safe-upgrade
 
-At this point I should be logged in as my normal user, ready to do some further admin work with the help of `sudo`. One of the first things I want to to is update the packages via `apt-get` / `aptitude`
+At this point I should be logged in as my normal user, ready to do some further admin work with the help of `sudo`. One of the first things I want to do is update the os packages via `apt-get` / `aptitude`
 
     $ sudo aptitude update
     ...
@@ -259,20 +259,24 @@ At this point I should be logged in as my normal user, ready to do some further 
     
 # Set the time-zone and check the locale
 
-...write me
+If I want to set the server's clock to correspond with my local timezeon, I'll do:
+
+    dpkg-reconfigure tzdata
+    
+Note that `GMT` / `UTC` may be preferrable, I find it depends on what I'll be doing with the VPS.
 
 # Install some helpful things
 
-...write more
+This new VPS is probably bare-bones in terms of the software installed on top of the Linux os, so I'll now add some basic packages:
 
-    $ sudo aptitude install build-essential libssl-dev bwm-ng zsh-beta git-core dnsutils whois rsync htop iotop iftop tmux
+    $ sudo aptitude install build-essential libssl-dev tmux zsh-beta git-core dnsutils whois rsync htop iotop iftop
     ...
 
-...write more
+I may end up installing lots of additional packages, but the above list always serves me as a good starting point.
 
 # Install NVM
 
-...write more
+Since I develop and deploy mainly with node.js, I like to install Tim Caswell's [NVM](https://github.com/creationix/nvm) tool to make my life easier:
 
     $ git clone git://github.com/creationix/nvm.git ~/.nvm
     ...
@@ -283,11 +287,21 @@ I then paste the following into a file called `~/.sh_nvm`:
     source $NVM_DIR/nvm.sh
     nvm use v0.5.1
 
-...write more
+NVM isn't quite ready for use, as I need to modify my user's shell environment to properly load `~/.sh_nvm`, and for me this means altering my user to default [Zsh](http://zsh.sourceforge.net/) instead of Bash.
 
-# Setup ZSH + oh-my-zsh
+Zsh is certainly not a prerequisite for NVM, but I like what it does for me, especially with the help of a Zsh framework named [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
-## Installation
+# Setup Zsh + oh-my-zsh
+
+## Installing zsh
+
+I included Zsh in the "helpful things" list above, but I could also install it separately:
+
+    $ sudo aptitude install zsh-beta
+
+I tend to install the "beta" release of zsh.
+
+## Installing oh-my-zsh
 
     $ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     ...
@@ -328,7 +342,7 @@ I may or may not populate `.sh_aliases` at this time, but it will probably end u
     alias ssh-otherserver='ssh -p 12345 -2 -c blowfish user@host'
     ...
 
-## Set ZSH as my normal user's default shell
+## Set zsh as my normal user's default shell
 
     $ chsh -s /bin/zsh
 
@@ -357,7 +371,7 @@ Upon the last logout / login cycle I probably got a warning like:
 
 That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `.sh_nvm`.  So now I'll install it.
 
-    $ nvm install v0.5.1
+    -> % nvm install v0.5.1
     ...
 
 That will take some time to download and compile, but after it's completed, I'll logout / login and the notice from NVM will have changed to:
@@ -366,7 +380,9 @@ That will take some time to download and compile, but after it's completed, I'll
     Now using node v0.5.1
     ...
 
-I can check the install location of the node and npm executables with:
+NVM installs [npm](http://npmjs.org/), a node.js package manager, along with node.js itself.
+
+I can check the install locations of node.js and npm with:
 
     $ which node && which npm
 
@@ -377,29 +393,47 @@ I expect to see something like this:
 
 # Make some "standard" directories
 
-I've been using the same directory naming conventions for awhile, so I'll do something like:
+I've been using the same directory-naming conventions for awhile, so I'll do something like:
 
     $ mkdir Downloads repos repos/my repos/other sites sources builds
 
 # That's it!
 
-At this point I'm done with my basic setup and security lock down, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS / VM.
+At this point I'm done with my basic setup and security lockdown, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS / VM.
+
+# AUTHOR
+
+Michael Bradley, Jr. <michaelsbradleyjr@gmail.com>
 
 
+# COPYRIGHT AND LICENSE
 
+This instructional text is Copyright (c) 2011 by Michael Bradley, Jr.
 
+This respository is free software, licensed under:
 
+The MIT License
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
+---------------------------------------
 
-
-
-
-
-
-
-
-
-
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/" title="JavaScript Reference">
+  <img src="http://static.jsconf.us/promotejshs.png" alt="JavaScript Reference" />
+</a>
