@@ -407,7 +407,7 @@ I expect to see something like this:
     /home/michael/.nvm/v0.5.1/bin/node
     /home/michael/.nvm/v0.5.1/bin/npm
 
-It's by virtue of `~/.zshrc` "sourcing" `~/.sh_nvm`, and in turn `~/.nvm/nvm.sh`, that those executables are in my shell's path.
+It's by virtue of `~/.zshrc` "sourcing" `~/.sh_path` and in turn `~/.sh_nvm`, then `~/.nvm/nvm.sh`, that those executables are in my shell's path.
 
 # Make some "standard" directories
 
