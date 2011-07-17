@@ -262,7 +262,7 @@ At this point I should be logged in as my normal user, ready to do some further 
     $ sudo aptitude safe-upgrade
     ...
     
-# Set the timezone and check the locale
+# Set the timezone
 
 If I want to set the server's clock to correspond with my local timezone, I'll do:
 
