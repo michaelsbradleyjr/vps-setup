@@ -430,7 +430,7 @@ This instructional text is Copyright (c) 2011 by Michael Bradley, Jr.
 
 This respository is free software, licensed under:
 
-*The MIT License*
+The MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
