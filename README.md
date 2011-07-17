@@ -110,7 +110,7 @@ I should seem something like:
 
     michael : michael sudo
 
-# Switch to the normal user and setup .ssh
+# Switch to the normal user and setup its .ssh directory
 
     # su - michael
 
@@ -121,15 +121,20 @@ I should seem something like:
     $ vim .ssh/authorized_keys
     ...
 
-At this point I copy/paste the public key/s from the machine/s I'll be using to access the new VPS via ssh.
+At this point I will copy/paste the *public* key/s from the machine/s I'll be using to access the new VPS via ssh.
 
 If I'll be connecting from the VPS to other machines, I can do:
 
     $ ssh-keygen -b 4096 -t rsa
+    ...
+
+I may or may not leave the "passphrase" blank, depending on my current level of paranoia.
 
 Now I should have `id_rsa.pub` and `id_rsa` files under `~/.ssh`.
 
 # Lock down sshd
+
+My philosophy is that sshd on a single-tenant box should be locked down very tightly. As necessary, the configuration can then be relaxed.
 
 ## Modify the server config file
 
@@ -139,7 +144,17 @@ Return to the root shell and open the config file for the ssh server:
     # vim /etc/ssh/sshd_config
     ...
 
-... write me
+I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `sshd_config` file but indicates *only* my typical changes or additions to the default settings:
+
+    Port 12345
+    PermitRootLogin no
+    PasswordAuthentication no
+    X11Forwarding no
+    UsePAM no
+    UseDNS no
+    AllowUsers michael
+
+In practice, I usually set `Port` to something that doesn't conflict with other things, in the neihborhood of 1024 - 65536. :-)  I make sure to note the port number in my password manager, along with the rest of the notes for this VPS.
 
 ## Restart sshd
 
@@ -161,14 +176,16 @@ If I completed the above steps correctly, I should be logged in as my normal use
 
 # Basic firewall
 
+Setting up a simple firewall with `iptables` is a good idea, especially for a VPS in the public cloud. On a local VM I may skip this step, that way I won't have to modify the rules set in order to develop/test network services on arbitrary ports.
+
 ## Create the rules set
 
     # vim /etc/iptables.up.rules
     ...
 
-For the most basic firewall protection, I copy in the rules set you can find in this repo, next to this README.md file, in the text file `iptables.up.rules`.
+For the most basic firewall protection, I copy in the rules set you can find in this repo next to `README.md`, in the text file [iptables.up.rules](https://github.com/michaelsbradleyjr/vps-setup/blob/master/iptables.up.rules).
 
-Note that port `12345` corresponds to the sshd port I set in the previous section. In practice, I usually set it to something that doesn't conflict with other things, in the neihborhood of 1024 - 65536. :-)  I make sure to note the port number in my password manager, along with the rest of the notes for this VPS.
+Note that port `12345` corresponds to the sshd port I set in the previous section.
 
 ## Load the rules
 
