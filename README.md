@@ -301,14 +301,14 @@ Zsh is certainly not a prerequisite for NVM, but I like what it does for me, esp
 
 # Setup Zsh + oh-my-zsh
 
-## Install zsh
+## Install Zsh
 
 I included Zsh in the "helpful things" list above, but I could also install it separately:
 
     $ sudo aptitude install zsh-beta
     ...
 
-I tend to install the "beta" release of zsh.
+I tend to install the "beta" release of Zsh.
 
 ## Install oh-my-zsh
 
