@@ -423,7 +423,7 @@ At this point I'm done with my basic setup and security lockdown, and am ready t
 
 Both Slicehost and Linode offer an impressive collection of free helpful docs from which you can learn more about administrating a Linux VPS:
 
-http://articles.slicehost.com/
+http://articles.slicehost.com/ <br />
 http://library.linode.com/
 
 # Author
