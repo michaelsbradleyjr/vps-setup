@@ -27,7 +27,7 @@ My assumption is that the VPS is a fresh install of Ubuntu Linux Server, version
     # passwd
     ...
 
-*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; &nbsp; within a text editor environment, it will indicate there may be some text above and/or below the lines in which I'm interested ]*
+*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; &nbsp;within a text editor environment, `...` will indicate there may be some text above and/or below the lines in which I'm interested ]*
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
