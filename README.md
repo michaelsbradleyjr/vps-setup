@@ -377,7 +377,7 @@ That's NVM telling me I haven't installed the version of node.js that I told it 
 
 NOTE:  In order to compile node.js, I'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
 
-    $ sudo aptitude install build-essential libssl-dev
+    -> % sudo aptitude install build-essential libssl-dev
 
 With those prerequisites installed, I'm ready to run install node.js with NVM's help:
 
@@ -394,7 +394,7 @@ NVM installs [npm](http://npmjs.org/), a node.js package manager, along with nod
 
 I can check the install locations of node.js and npm with:
 
-    $ which node && which npm
+    -> % which node && which npm
 
 I expect to see something like this:
 
@@ -405,7 +405,7 @@ I expect to see something like this:
 
 I've been using the same directory-naming conventions for awhile, so I'll do something like:
 
-    $ mkdir Downloads repos repos/my repos/other sites sources builds
+    -> % mkdir Downloads repos repos/my repos/other sites sources builds
 
 # That's it!
 
