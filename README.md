@@ -395,7 +395,7 @@ That will take some time to download and compile, but after it's completed, I'll
     Now using node v0.5.1
     ...
 
-NVM installs [npm](http://npmjs.org/), a (the!) node.js package manager, along with node.js.
+NVM installs [npm](http://npmjs.org/), a (the!) node.js package manager, along with node.
 
 I can check the install locations of node.js and npm with:
 
