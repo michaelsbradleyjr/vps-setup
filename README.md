@@ -375,7 +375,7 @@ Upon the last logout / login cycle I probably got a warning like:
 
 That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `~/.sh_nvm`.
 
-NOTE:  In order to compile node.js, you'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
+NOTE:  In order to compile node.js, I'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
 
     $ sudo aptitude install build-essential libssl-dev
 
