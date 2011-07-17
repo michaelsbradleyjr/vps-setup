@@ -134,17 +134,17 @@ Now I should have `id_rsa.pub` and `id_rsa` files under `~/.ssh`.
 
 # Lock down sshd
 
-My philosophy is that sshd on a single-tenant box should be locked down very tightly. As necessary, the configuration can then be relaxed.
+My philosophy is that sshd on a single-tenant box should be locked down very tightly. As necessary, the configuration can be relaxed.
 
-## Modify the server config file
+## Modify the SSH server config file
 
-Return to the root shell and open the config file for the ssh server:
+Return to the root shell and open the config file for the SSH server:
 
     $ exit
     # vim /etc/ssh/sshd_config
     ...
 
-I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `sshd_config` file but indicates *only* my typical changes or additions to the default settings:
+I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `sshd_config` file, but indicates *only* my typical changes or additions to the default settings:
 
     Port 12345
     PermitRootLogin no
@@ -172,7 +172,7 @@ Now from my local machine I'll do something like:
     $ ssh -p 12345 michael@x.x.x.x
     ...
 
-If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password.
+If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password, i.e. authentication was accomplished via PKI.
 
 # Basic firewall
 
@@ -190,7 +190,30 @@ Note that port `12345` corresponds to the sshd port I set in the previous sectio
 ## Load the rules
 
     # iptables -F && iptables-restore < /etc/iptables.up.rules
+
+I can inspect the current rules set like this:
+
+    # iptables -L -v
+    ...
     
+I should seem something like:
+
+    Chain INPUT (policy DROP 501 packets, 51672 bytes)
+     pkts bytes target     prot opt in     out     source               destination         
+        0     0 ACCEPT     all  --  lo     any     anywhere             anywhere            
+        0     0 REJECT     all  --  !lo    any     anywhere             127.0.0.0/8         reject-with icmp-port-unreachable 
+        1    28 ACCEPT     icmp --  any    any     anywhere             anywhere            icmp echo-request 
+     3585  271K ACCEPT     tcp  --  any    any     anywhere             anywhere            multiport dports www,https,65432 
+      142 26324 LOG        all  --  any    any     anywhere             anywhere            limit: avg 5/min burst 5 LOG level debug prefix `iptables denied: ' 
+     1139  420K ACCEPT     all  --  any    any     anywhere             anywhere            state RELATED,ESTABLISHED 
+
+    Chain FORWARD (policy DROP 0 packets, 0 bytes)
+     pkts bytes target     prot opt in     out     source               destination         
+
+    Chain OUTPUT (policy ACCEPT 88 packets, 6094 bytes)
+     pkts bytes target     prot opt in     out     source               destination         
+     3963  995K ACCEPT     all  --  any    any     anywhere             anywhere            state RELATED,ESTABLISHED 
+
 ## Set the rules to load upon re/boot
 
     # vim /etc/network/if-pre-up.d/iptables
