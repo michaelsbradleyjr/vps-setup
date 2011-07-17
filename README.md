@@ -250,7 +250,7 @@ If I completed the above steps correctly, I should be logged in as my normal use
 
 If I made a mistake I probably won't be able to login via ssh, so I'll need access to the VPS's console, which is usually provided through some browser applet or special ssh front-end, as indicated in the hosting company's customer support site.  If I'm setting up a local VM, then my virtualization software will give me access to the console.
 
-In either case, after logging in through the console I'll need to check the firewall rules and related files (see notes above), and the `sshd_config` file, for mistakes I may have made; and I may need to peek in the system logs for clues.
+In either case, after logging in through the console I'll need to check the firewall rules and related files (see notes above), and the `/etc/ssh/sshd_config` file, for mistakes I may have made; and I may need to peek in the system logs for clues.
 
 # Update packages and run safe-upgrade
 
@@ -373,7 +373,13 @@ Upon the last logout / login cycle I probably got a warning like:
     ...
 
 
-That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `.sh_nvm`.  So now I'll install it.
+That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `.sh_nvm`.
+
+NOTE:  In order to compile node.js, you'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
+
+    $ sudo aptitude install build-essential libssl-dev
+
+With those prerequisites installed, I'm ready to run install node.js with NVM's help:
 
     -> % nvm install v0.5.1
     ...
