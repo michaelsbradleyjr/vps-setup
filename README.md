@@ -271,6 +271,28 @@ If I want to set the server's clock to correspond with my local timezone, I'll d
     
 Select the appropriate timezone through the ncurses-based menu. Note that `GMT` / `UTC` may be preferrable, I find it depends on what I'll be doing with the VPS.
 
+# Inspect and set the locale
+
+I may want to inspect the "locale" settings for my VPS:
+
+    $ locale
+    ...
+    
+The `locale` command will report something like:
+
+    LANG=
+    LANGUAGE=
+    LC_CTYPE=en_US.UTF-8
+    ...
+
+That's probably fine, but if something I didn't expect or want was returned, I could run the following two commands:
+
+    sudo locale-gen en_US.UTF-8
+    ...
+    sudo update-locale LANG=en_US.UTF-8
+
+Changes will not be noticeable until I logout / login again. A [complete listing](http://www.iana.org/assignments/language-subtag-registry) of language and region codes is hosted on IANA's website.
+
 # Install some helpful things
 
 This new VPS is probably bare-bones in terms of installed software, so I'll now add some basic packages:
