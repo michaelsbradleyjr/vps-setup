@@ -401,18 +401,18 @@ I've been using the same directory-naming conventions for awhile, so I'll do som
 
 At this point I'm done with my basic setup and security lockdown, and am ready to do purpose-sepcific adjustments, dev work and/or deployments on my new VPS / VM.
 
-# AUTHOR
+# Author
 
 Michael Bradley, Jr. <michaelsbradleyjr@gmail.com>
 
 
-# COPYRIGHT AND LICENSE
+# Copyright and License
 
 This instructional text is Copyright (c) 2011 by Michael Bradley, Jr.
 
 This respository is free software, licensed under:
 
-The MIT License
+*The MIT License*
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
