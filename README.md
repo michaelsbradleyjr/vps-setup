@@ -159,7 +159,7 @@ I want to change and add to the defaults. What's suggested below is *not* a repl
     UseDNS no
     AllowUsers michael
 
-In practice, I usually set `Port` to something that doesn't conflict with other things, in the neihborhood of 1024 - 65536. :-)  I make sure to note the port number in my password manager, along with the rest of the notes for this VPS.
+In practice, I usually set `Port` to something that doesn't conflict with other things, in the neihborhood of 1025 - 65536. :-)  I make sure to note the port number in my password manager, along with the rest of the notes for this VPS.
 
 ## Restart sshd
 
