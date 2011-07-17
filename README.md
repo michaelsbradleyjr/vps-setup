@@ -390,7 +390,7 @@ That will take some time to download and compile, but after it's completed, I'll
     Now using node v0.5.1
     ...
 
-NVM installs [npm](http://npmjs.org/), a node.js package manager, along with node.js itself.
+NVM installs [npm](http://npmjs.org/), a (the!) node.js package manager, along with node.js itself.
 
 I can check the install locations of node.js and npm with:
 
@@ -400,6 +400,8 @@ I expect to see something like this:
 
     /home/michael/.nvm/v0.5.1/bin/node
     /home/michael/.nvm/v0.5.1/bin/npm
+
+It's by virtue of `~/.sh_nvm` and in turn `~/.nvm/nvm.sh` that those executables are in my shell environment's path.
 
 # Make some "standard" directories
 
