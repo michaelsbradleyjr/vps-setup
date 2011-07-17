@@ -200,7 +200,7 @@ I can inspect the current rules set like this:
     # iptables -L -v
     ...
     
-I should seem something like:
+I should see something like:
 
     Chain INPUT (policy DROP 501 packets, 51672 bytes)
      pkts bytes target     prot opt in     out     source               destination         
