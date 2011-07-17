@@ -266,7 +266,7 @@ At this point I should be logged in as my normal user, ready to do some further 
 
 If I want to set the server's clock to correspond with my local timezone, I'll do:
 
-    dpkg-reconfigure tzdata
+    $ sudo dpkg-reconfigure tzdata
     ...
     
 Select the appropriate timezone through the ncurses-based menu. Note that `GMT` / `UTC` may be preferrable, I find it depends on what I'll be doing with the VPS.
