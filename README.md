@@ -16,7 +16,7 @@ When I say "local VM" I mean a *virtual machine* running within some local (desk
 
 For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *-or-* one running on my local machine.
 
-My assumption is that the VPS is a fresh install of Ubuntu Linux Server, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
+My assumption is that the VPS is a fresh install of Ubuntu Linux Server, version 11.04 or later. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
 **At this point I know the root password and can either access the VPS's console or can login via ssh.**
 
