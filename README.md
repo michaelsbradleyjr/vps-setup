@@ -293,7 +293,7 @@ I then paste the following into a file called `~/.sh_nvm`:
     source $NVM_DIR/nvm.sh
     nvm use v0.5.1
 
-NVM isn't quite ready for use, as I need to modify my user's shell environment to properly load `~/.sh_nvm`, and for me this means altering my user to default [Zsh](http://zsh.sourceforge.net/) instead of Bash.
+NVM isn't quite ready for use, as I need to modify my user's shell environment to properly load `~/.sh_nvm`, and for me this means altering my user account to default to [Z shell](http://zsh.sourceforge.net/) instead of Bash.
 
 Zsh is certainly not a prerequisite for NVM, but I like what it does for me, especially with the help of a Zsh framework named [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
