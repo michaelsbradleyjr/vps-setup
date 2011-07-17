@@ -273,7 +273,7 @@ Select the appropriate timezone through the ncurses-based menu. Note that `GMT` 
 
 # Install some helpful things
 
-This new VPS is probably bare-bones in terms of the software installed on top of the Linux os, so I'll now add some basic packages:
+This new VPS is probably bare-bones in terms of installed software, so I'll now add some basic packages:
 
     $ sudo aptitude install build-essential libssl-dev tmux zsh-beta git-core dnsutils whois rsync htop iotop iftop
     ...
