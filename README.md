@@ -203,7 +203,7 @@ I should seem something like:
         0     0 ACCEPT     all  --  lo     any     anywhere             anywhere            
         0     0 REJECT     all  --  !lo    any     anywhere             127.0.0.0/8         reject-with icmp-port-unreachable 
         1    28 ACCEPT     icmp --  any    any     anywhere             anywhere            icmp echo-request 
-     3585  271K ACCEPT     tcp  --  any    any     anywhere             anywhere            multiport dports www,https,65432 
+     3585  271K ACCEPT     tcp  --  any    any     anywhere             anywhere            multiport dports www,https,12345 
       142 26324 LOG        all  --  any    any     anywhere             anywhere            limit: avg 5/min burst 5 LOG level debug prefix `iptables denied: ' 
      1139  420K ACCEPT     all  --  any    any     anywhere             anywhere            state RELATED,ESTABLISHED 
 
