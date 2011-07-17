@@ -368,7 +368,7 @@ If I completed the above steps correctly, then with the "candy" theme, I should 
     michael@myvps [09:36:21] [~] 
     -> % 
 
-# Install some version of node.js and npm
+# Install some version of node.js and npm using NVM
 
 Upon the last logout / login cycle I probably got a warning like:
 
