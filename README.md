@@ -388,7 +388,7 @@ NOTE:  In order to compile node.js, I'll need to have installed the `build-essen
     -> % sudo aptitude install build-essential libssl-dev
     ...
 
-With those prerequisites installed, I'm ready to run install node.js with NVM's help:
+With those prerequisites installed, I'm ready to install node.js with NVM's help:
 
     -> % nvm install v0.5.1
     ...
