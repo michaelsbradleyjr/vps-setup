@@ -314,7 +314,7 @@ I tend to install the "beta" release of zsh.
     ...
     $ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-I recommend you visit the main page for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) over on GitHub, to learn more about this community-driven framework.
+The main page for the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) repository on GitHub is a good place to learn more about this community-driven framework.
     
 ## Customize .zshrc
 
