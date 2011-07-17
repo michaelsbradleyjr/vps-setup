@@ -4,7 +4,7 @@ Over the past few years, whenever I spin up a new Linux VPS or local VM, I often
 
 Since I don't do this from scratch every day, I need to refer back to those familiar docs, spread across the Web, to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
 
-This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- Google and the "man pages" are good friends.
+This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
 
 Note that my reference point at the time of writing is Ubuntu Linux 11.04.
 
