@@ -188,7 +188,7 @@ Setting up a simple firewall with `iptables` is a good idea, especially for a VP
     # vim /etc/iptables.up.rules
     ...
 
-For the most basic firewall protection, I copy in the rules set you can find in this repo next to `README.md`, in the text file [iptables.up.rules](https://github.com/michaelsbradleyjr/vps-setup/blob/master/iptables.up.rules).
+For the most basic firewall protection, I copy in the rules set found in this repo next to `README.md`, in the text file [iptables.up.rules](https://github.com/michaelsbradleyjr/vps-setup/blob/master/iptables.up.rules).
 
 Note that port `12345` corresponds to the sshd `Port` I set in the previous section.
 
