@@ -250,7 +250,7 @@ In either case, after logging in through the console I'll need to check the fire
 
 # Update packages and run safe-upgrade
 
-At this point I should be logged in as my normal user, ready to do some further admin via sudo. One of the first things I want to to is update the packages via `apt-get` / `aptitude`
+At this point I should be logged in as my normal user, ready to do some further admin work with the help of `sudo`. One of the first things I want to to is update the packages via `apt-get` / `aptitude`
 
     $ sudo aptitude update
     ...
