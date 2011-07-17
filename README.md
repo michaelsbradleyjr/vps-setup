@@ -308,11 +308,13 @@ I included Zsh in the "helpful things" list above, but I could also install it s
 
 I tend to install the "beta" release of zsh.
 
-## Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+## Install oh-my-zsh
 
     $ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     ...
     $ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+I recommend you visit the main page for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) over on GitHub, to learn more about this community-driven framework.
     
 ## Customize .zshrc
 
