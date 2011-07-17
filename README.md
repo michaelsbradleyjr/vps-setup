@@ -319,7 +319,7 @@ I tend to install the "beta" release of zsh.
     $ vim ~/.zshrc
     ...
     
-I like the "candy" theme:
+I like the "candy" [theme](https://github.com/robbyrussell/oh-my-zsh/wiki/themes):
 
     ...
     export ZSH_THEME="candy"
