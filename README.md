@@ -349,7 +349,7 @@ I may or may not populate `.sh_aliases` at this time, but it will probably end u
     alias ssh-otherserver='ssh -p 12345 -2 -c blowfish user@host'
     ...
 
-## Set zsh as my normal user's default shell
+## Set Zsh as my normal user's default shell
 
     $ chsh -s /bin/zsh
     ...
