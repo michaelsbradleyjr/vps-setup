@@ -18,7 +18,7 @@ For simplicity's sake, I'll just use the term "VPS" throughout this README, but 
 
 My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
-At this point I know the root password and can either access the VPS's console or login via ssh.
+At this point I know the root password and can either access the VPS's console or can login via ssh.
 
 # Login as root and change the root password
 
