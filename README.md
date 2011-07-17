@@ -137,11 +137,11 @@ I may or may not leave the "passphrase" blank, depending on my current level of 
 
 Now I should have `id_rsa.pub` and `id_rsa` files under `~/.ssh`.
 
-# Lock down sshd
+# Lock down SSH server
 
 My philosophy is that sshd on a single-tenant box should be locked down very tightly. As necessary, the configuration can be relaxed.
 
-## Modify the SSH server config file
+## Modify the sshd (SSH server) config file
 
 Return to the root shell and open the config file for the SSH server:
 
