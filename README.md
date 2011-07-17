@@ -14,7 +14,7 @@ When I say "VPS" I mean a *virtual private server* provided by the likes of [Rac
 
 When I say "local VM" I mean a *virtual machine* running within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
 
-For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *or* one running on my local machine.
+For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *-or-* one running on my local machine.
 
 My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
