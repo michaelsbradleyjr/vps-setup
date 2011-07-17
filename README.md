@@ -6,7 +6,7 @@ Since I don't do this from scratch every day, I need to refer back to those fami
 
 This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
 
-Note that my reference point at the time of writing is [Ubuntu Linux 11.04 Server - Natty Narwhal](http://releases.ubuntu.com/11.04/).
+Note that my reference point at the time of writing is [Ubuntu Linux Server 11.04 - Natty Narwhal](http://releases.ubuntu.com/11.04/).
 
 # VPS spin up / local VM os install / local VM clone
 
