@@ -4,7 +4,7 @@ Over the past few years, whenever I spin up a new Linux VPS or local VM, I often
 
 Since I don't do this from scratch every day, I need to refer back to those familiar docs, spread across the Web, to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
 
-This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on linux + node.js.  For those who stumble upon this resource: I won't explain every command or justify each step -- Google and the "man pages" are good friends.
+This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + node.js.  For those who stumble upon this resource: I won't explain every command or justify each step -- Google and the "man pages" are good friends.
 
 Note that my reference point at the time of writing is Ubuntu Linux 11.04.
 
@@ -14,7 +14,7 @@ When I say "VPS" I mean a *virtual private server* provided by the likes of [Rac
 
 When I say "local VM" I mean a *virtual machine* run within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
 
-For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server out in the cloud *or* one running within my local machine.
+For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *or* one running on my local machine.
 
 My assumption is that the VPS is a fresh install of Ubuntu Linux, version 11.04 or greater. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
@@ -27,7 +27,7 @@ At this point I know the root password and can either access the VPS's console o
     # passwd
     ...
 
-*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; within a text editor env, it will indicate there is or may be some text above and/or below the contents in which I'm interested ]*
+*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; within a text editor environment, it will indicate there is or may be some text above and/or below the contents in which I'm interested ]*
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
@@ -55,7 +55,7 @@ And add this (on the 2nd line, probably):
 
 The hostname, in this case `myvps`, should match in both files, `/etc/hostname` and `/etc/hosts`.
 
-Depedning on the environment (e.g. Linode vs. Rackspace Cloud) I may also want to comment out a line in `/etc/default/dhcpd`:
+Depending on the environment (e.g. Linode vs. Rackspace Cloud) I may also want to comment out a line in `/etc/default/dhcpd`:
 
     # vim /etc/default/dhcpd
     ...
@@ -82,20 +82,24 @@ Set another ridiculously long password and store it in my local password manager
 
 # Visudo
 
-The sudo utility will my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
+The sudo utility will enable my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
 
     # visudo
     ...
 
-For convenience, modify sudoers so that members of group sudo do not have to enter a password.  This is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated.
-
-One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
+For convenience, modify sudoers so that members of group sudo do not have to enter a password:
 
     ...
     %sudo ALL=NOPASSWD: ALL
     ...
 
 Close and save -- make sure to confirm the save.
+
+This setting is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns of doing this are mostly alleviated.
+
+One caveat to mention -- any publicly accessible network services (e.g. node.js scripts) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
+
+
 
 # Add my normal user to group sudo
 
