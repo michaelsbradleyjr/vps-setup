@@ -70,7 +70,7 @@ Put a `#` in front of the `SET_HOSTNAME` directive:
 
 Now I'm ready to set the hostname:
 
-    # hostname -F
+    # hostname -F /etc/hostname
 
 # Add a "normal user"
 
