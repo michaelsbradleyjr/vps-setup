@@ -301,7 +301,7 @@ I may or may not configure my VPS for some level of automatic updates, e.g. for 
 
 This new VPS is probably bare-bones in terms of installed software, so I'll now add some basic packages:
 
-    $ sudo aptitude install build-essential libssl-dev curl tmux zsh-beta git-core dnsutils whois rsync htop iotop iftop
+    $ sudo aptitude install build-essential libssl-dev curl apache2-utils tmux zsh-beta git-core dnsutils whois rsync htop iotop iftop
     ...
 
 I may end up installing lots of additional packages, but the above list always serves me as a good starting point.
