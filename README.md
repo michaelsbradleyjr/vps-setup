@@ -373,7 +373,13 @@ And I stick something like this in `.sh_path`:
     
     export PATH=~/bin:$PATH
 
-I may or may not populate `.sh_aliases` at this time, but it will probably end up containing things like this:
+I want to populate `.sh_aliases` with at least the following:
+
+    alias sudo='sudo env PATH=$PATH'
+
+This will allow the npm tool (see notes below) to work properly when invoked with `sudo` in the context of an NVM installation.
+
+In time `.sh_aliases` will probably end up containing other helpful shortcuts like:
 
     ...
     alias ssh-otherserver='ssh -p 12345 -2 -c blowfish user@host'
