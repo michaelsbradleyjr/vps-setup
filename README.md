@@ -377,7 +377,7 @@ I want to populate `.sh_aliases` with at least the following:
 
     alias sudo-keep='sudo env PATH=$PATH'
 
-This will allow the npm tool (see notes below) to work properly when invoked with `sudo` in the context of an NVM installation.
+This alias will allow the npm tool (see notes below) to work properly in conjunction with `sudo`, in the context of an NVM installation.
 
 In time `.sh_aliases` will probably end up containing other helpful shortcuts like:
 
