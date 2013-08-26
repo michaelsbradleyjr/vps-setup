@@ -6,17 +6,17 @@ Since I don't do this from scratch every day, I need to refer back to those fami
 
 This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
 
-Note that my reference point at the time of writing is [Ubuntu Server 11.04 - Natty Narwhal](http://releases.ubuntu.com/11.04/).
+Note that my reference point at the time of writing is [Ubuntu Server 12.04 - Precise Pangolin](http://releases.ubuntu.com/12.04/).
 
 # Linux VPS spin up / local VM os install
 
-When I say "VPS" I mean a *virtual private server* provided by the likes of [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/), [Slicehost](http://www.slicehost.com/) and [Linode](http://www.linode.com/index.cfm).
+When I say "VPS" I mean a *virtual private server* provided by the likes of [DigitalOcean](https://www.digitalocean.com/), [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/) and [Linode](http://www.linode.com/index.cfm).
 
-When I say "local VM" I mean a *virtual machine* running within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/overview.html) or [VirtualBox](http://www.virtualbox.org/).
+When I say "local VM" I mean a *virtual machine* running within some local (desktop) virtualization environment, e.g. [VMware Fusion](http://www.vmware.com/products/fusion/) or [VirtualBox](http://www.virtualbox.org/).
 
 For simplicity's sake, I'll just use the term "VPS" throughout this README, but I could be referring to a virtual server hosted in the cloud *-or-* one running on my local machine.
 
-My assumption is that the VPS is a bare-bones fresh install of Ubuntu Server, version 11.04 or later. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
+My assumption is that the VPS is a bare-bones fresh install of Ubuntu Server, version 12.04 or later. I also assume that, at a minimum, sshd (SSH server) is installed with the default settings and listening for connections.
 
 **At this point I know the root password and can either access the VPS's console or can login via ssh.**
 
@@ -177,7 +177,7 @@ Now from my local machine I'll do something like:
     $ ssh -p 12345 michael@x.x.x.x
     ...
 
-If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password, i.e. authentication was accomplished via PKI.
+If I completed the above steps correctly, I should be logged in as my normal user, without having to enter a password, i.e. authentication was accomplished via public-key cryptography.
 
 # Basic firewall
 
@@ -295,7 +295,7 @@ Changes will not be noticeable until I logout / login again. A [complete listing
 
 # Automatic updates
 
-I may or may not configure my VPS for some level of automatic updates, e.g. for security updates.  In any case, the (version specific) [instructions for doing so](https://help.ubuntu.com/11.04/serverguide/C/automatic-updates.html) may be found on Ubuntu's official help site.
+I may or may not configure my VPS for some level of automatic updates, e.g. for security updates.  In any case, the (version specific) [instructions for doing so](https://help.ubuntu.com/12.04/serverguide/automatic-updates.html) may be found on Ubuntu's official help site.
 
 # Install some helpful things
 
@@ -319,7 +319,7 @@ I then paste the following into a file called `~/.sh_nvm`:
 
     NVM_DIR=$HOME/.nvm
     source $NVM_DIR/nvm.sh
-    nvm use v0.5.1
+    nvm use v0.10.17
 
 If I haven't installed the `curl` package already (it's included in the "helpful things" list above), I'll need to do so since NVM depends on it:
 
@@ -414,29 +414,20 @@ If I completed the above steps correctly, then with the "candy" theme, I should 
 Upon the last logout / login cycle I probably got a warning like:
 
     ...
-    v0.5.1 version is not installed yet
+    v0.10.17 version is not installed yet
     ...
 
 
-That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `~/.sh_nvm`.
+That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `~/.sh_nvm`. The situation can be remedied like so:
 
-NOTE:  In order to compile node.js, I'll need to have installed the `build-essential` and `libssl-dev` packages. I included them in the "helpful things" list above, but I could also install them separately:
-
-    -> % sudo aptitude install build-essential libssl-dev
+    -> % nvm install v0.10.17
     ...
 
-With those prerequisites installed, I'm ready to install node.js with NVM's help:
-
-    -> % nvm install v0.5.1
-    ...
-
-That will take some time to download and compile, but after it's completed, I'll logout / login and the notice from NVM will have changed to:
+After the install has completed, I'll logout / login and the notice from NVM will have changed to:
 
     ...
-    Now using node v0.5.1
+    Now using node v0.10.17
     ...
-
-NVM installs [npm](http://npmjs.org/), a *(the!)* node.js package manager, along with node.
 
 I can check the install locations of node.js and npm with:
 
@@ -445,8 +436,8 @@ I can check the install locations of node.js and npm with:
 
 I expect to see something like this:
 
-    /home/michael/.nvm/v0.5.1/bin/node
-    /home/michael/.nvm/v0.5.1/bin/npm
+    /home/michael/.nvm/v0.10.17/bin/node
+    /home/michael/.nvm/v0.10.17/bin/npm
 
 It's by virtue of `~/.zshrc` "sourcing" `~/.sh_path` and in turn `~/.sh_nvm`, then `~/.nvm/nvm.sh`, that those executables are in my shell's path.
 
@@ -462,9 +453,9 @@ At this point I'm done with my basic setup and security lockdown, and am ready t
 
 # Further reading
 
-Both Slicehost and Linode offer impressive collections of free tutorials from which you can learn more about administering a Linux VPS:
+Both DigitalOcean and Linode offer impressive collections of free tutorials from which you can learn more about administering a Linux VPS:
 
-http://articles.slicehost.com/ <br />
+https://www.digitalocean.com/community <br />
 http://library.linode.com/
 
 # Author
@@ -474,32 +465,20 @@ Michael Bradley, Jr. <michaelsbradleyjr@gmail.com>
 
 # Copyright and License
 
-This instructional text is Copyright (c) 2011 by Michael Bradley, Jr.
+This instructional text is Copyright &copy; 2011-2013 by Michael Bradley, Jr.
 
 This respository is free software, licensed under:
 
 The MIT License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---------------------------------------
 
-<a href="https://developer.mozilla.org/en/JavaScript/Reference/" title="JavaScript Reference">
-  <img src="http://static.jsconf.us/promotejshs.png" alt="JavaScript Reference" />
-</a>
+<div align="left">
+  <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference" title="JavaScript Reference"><img src="http://upload.wikimedia.org/wikipedia/en/d/d6/Mozilla_Developer_Network.png" alt="JavaScript Reference" width="64" heigh="73" align="center"/></a>&nbsp;&nbsp;&nbsp;<a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference">JavaScript Reference</a>
+</div>
