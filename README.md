@@ -27,7 +27,7 @@ My assumption is that the VPS is a bare-bones fresh install of Ubuntu Server, ve
     # passwd
     ...
 
-*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `vim` text editor; &nbsp;within a text editor environment, `...` will indicate there may be some text above and/or below the lines in which I'm interested ]*
+*[ `...` beneath a prompt+command will indicate the command will have some output, ask for further input or invoke some interactive environment, e.g. the `nano` text editor; &nbsp;within a text editor environment, `...` will indicate there may be some text above and/or below the lines in which I'm interested ]*
 
 Set some ridiculously long password and store it in my local password manager, along with basic notes about the VPS's IP address and the short name I'll use to refer to it, e.g. in a shell alias on my local machine.
 
@@ -35,7 +35,7 @@ Set some ridiculously long password and store it in my local password manager, a
 
 I'll want to set the VPS's hostname and create a matching entry in `/etc/hosts`:
 
-    # vim /etc/hostname
+    # nano /etc/hostname
     ...
     
 Enter a single line of text. I usually indicate a short name that I'll commonly use to refer to the VPS:
@@ -44,7 +44,7 @@ Enter a single line of text. I usually indicate a short name that I'll commonly 
 
 Now edit `/etc/hosts`
 
-    # vim /etc/hosts
+    # nano /etc/hosts
     ...
 
 And add this (on the 2nd line, probably):
@@ -58,7 +58,7 @@ The hostname, in this case `myvps`, should match in both files, `/etc/hostname` 
 
 Depending on the environment (e.g. Linode vs. Rackspace Cloud) I may also want to comment out a line in `/etc/default/dhcpd`:
 
-    # vim /etc/default/dhcpd
+    # nano /etc/default/dhcpd
     ...
 
 Put a `#` in front of the `SET_HOSTNAME` directive:
@@ -123,7 +123,7 @@ I should seem something like:
 
     $ mkdir .ssh && touch .ssh/authorized_keys
     $ chmod 700 .ssh && chmod 600 .ssh/*
-    $ vim .ssh/authorized_keys
+    $ nano .ssh/authorized_keys
     ...
 
 At this point I will copy/paste the *public* key/s from the machine/s I'll be using to access the new VPS via ssh.
@@ -146,7 +146,7 @@ My philosophy is that sshd on a single-tenant box should be locked down very tig
 Return to the root shell and open the config file for the SSH server:
 
     $ exit
-    # vim /etc/ssh/sshd_config
+    # nano /etc/ssh/sshd_config
     ...
 
 I want to change and add to the defaults. What's suggested below is *not* a replacement for the contents of the `/etc/ssh/sshd_config` file, but indicates *only* my typical changes or additions to the default settings:
@@ -185,7 +185,7 @@ Setting up a simple firewall with `iptables` is a good idea, especially for a VP
 
 ## Create the rules set
 
-    # vim /etc/iptables.up.rules
+    # nano /etc/iptables.up.rules
     ...
 
 For the most basic firewall protection, I copy in the rules set found in this repo next to `README.md`, in the text file [iptables.up.rules](https://github.com/michaelsbradleyjr/vps-setup/blob/master/iptables.up.rules).
@@ -223,7 +223,7 @@ I should see something like:
 
 I need to create a file:
 
-    # vim /etc/network/if-pre-up.d/iptables
+    # nano /etc/network/if-pre-up.d/iptables
     ...
 
 Paste this into the new file:
@@ -351,7 +351,7 @@ The main page for the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) rep
     
 ## Customize .zshrc
 
-    $ vim ~/.zshrc
+    $ nano ~/.zshrc
     ...
     
 I like the "candy" [theme](https://github.com/robbyrussell/oh-my-zsh/wiki/themes):
