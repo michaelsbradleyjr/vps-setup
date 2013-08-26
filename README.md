@@ -301,7 +301,7 @@ I may or may not configure my VPS for some level of automatic updates, e.g. for 
 
 This new VPS is probably bare-bones in terms of installed software, so I'll now add some basic packages:
 
-    $ sudo aptitude install build-essential libssl-dev curl apache2-utils tmux zsh-beta git-core dnsutils whois rsync htop iotop iftop
+    $ sudo aptitude install build-essential libssl-dev curl apache2-utils tmux zsh git-core dnsutils whois rsync htop iotop iftop
     ...
 
 I may end up installing lots of additional packages, but the above list always serves me as a good starting point.
@@ -336,7 +336,7 @@ Zsh is certainly not a prerequisite for NVM, but I like what it does for me, esp
 
 I included Zsh in the "helpful things" list above, but I could also install it separately:
 
-    $ sudo aptitude install zsh-beta
+    $ sudo aptitude install zsh
     ...
 
 I tend to install the "beta" release of Zsh.
