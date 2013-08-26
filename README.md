@@ -81,7 +81,7 @@ I don't want to spend most of my time authenticated as root, so I'll create a no
 
 Set another ridiculously long password and store it in my local password manager along with the other notes for the VPS.
 
-# Customize sudoers
+## Customize sudoers
 
 The `sudo` utility will enable my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
 
@@ -100,9 +100,7 @@ This setting is certainly convenient, but wouldn't be such a good idea on a mult
 
 One caveat to mention -- any publicly accessible network services (e.g. Node.js scripts hosted on a cloud server) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
-
-
-# Add the normal user to group sudo
+## Add the normal user to group sudo
 
     # usermod -a -G sudo michael
 
@@ -115,7 +113,7 @@ I should seem something like:
 
     michael : michael sudo
 
-# Switch to the normal user and setup .ssh
+## Switch to the normal user and setup .ssh
 
     # su - michael
 
@@ -328,18 +326,18 @@ If I haven't installed the `curl` package already (it's included in the "helpful
 
 NVM isn't quite ready for use, as I need to modify my user's shell environment to properly load `~/.sh_nvm`, and for me this means altering my user account to default to [Z shell](http://zsh.sourceforge.net/) instead of Bash.
 
-Zsh is certainly not a prerequisite for NVM, but I like what it does for me, especially with the help of a Zsh framework named [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+Zsh is certainly not a prerequisite for NVM, but I like what it does for me, especially with the help of a zsh framework named [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
-# Setup Zsh + oh-my-zsh
+# Setup zsh + oh-my-zsh
 
-## Install Zsh
+## Install zsh
 
-I included Zsh in the "helpful things" list above, but I could also install it separately:
+I included zsh in the "helpful things" list above, but I could also install it separately:
 
     $ sudo aptitude install zsh
     ...
 
-I tend to install the "beta" release of Zsh.
+I tend to install the "beta" release of zsh.
 
 ## Install oh-my-zsh
 
@@ -390,7 +388,7 @@ In time `.sh_aliases` will probably end up containing other helpful shortcuts li
     alias ssh-otherserver='ssh -p 12345 -2 -c blowfish user@host'
     ...
 
-## Set Zsh as the normal user's default shell
+## Set zsh as the normal user's default shell
 
     $ chsh -s /bin/zsh
     ...
@@ -409,7 +407,7 @@ If I completed the above steps correctly, then with the "candy" theme, I should 
     michael@myvps [09:36:21] [~] 
     -> % 
 
-# Install some version of Node.js using NVM
+# Install a version of Node.js using NVM
 
 Upon the last logout / login cycle I probably got a warning like:
 
@@ -469,7 +467,7 @@ This instructional text is Copyright &copy; 2011-2013 by Michael Bradley, Jr.
 
 This respository is free software, licensed under:
 
-The MIT License
+[The MIT License](http://opensource.org/licenses/MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
