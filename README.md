@@ -4,7 +4,7 @@ Over the past few years, whenever I spin up a new Linux VPS or local VM, I often
 
 Since I don't do this from scratch every day, I need to refer back to those familiar docs, spread across the Web, to make sure I haven't missed a step. To keep things a bit simpler, this README will collect those basic steps into a single doc that I can load quickly.  Who knows, maybe someone else will find it useful too.
 
-This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
+This documentation will by no means be exhaustive, but should provide a fresh Linux VPS with a reasonable amount of *basic* security and facilities for everyday dev work, particularly for someone whose focus is on Linux + [Node.js](http://nodejs.org/).  For those who stumble upon this resource: I won't explain every command or justify each step -- [Google](http://bit.ly/q3TYIW) and the "man pages" are good friends.
 
 Note that my reference point at the time of writing is [Ubuntu Server 12.04 - Precise Pangolin](http://releases.ubuntu.com/12.04/).
 
@@ -20,7 +20,7 @@ My assumption is that the VPS is a bare-bones fresh install of Ubuntu Server, ve
 
 **At this point I know the root password and can either access the VPS's console or can login via ssh.**
 
-# Login as root and change the root password
+# Login as root and change the password
 
 *[ `#` will denote a root shell prompt ]*
 
@@ -98,7 +98,7 @@ Close and save -- make sure to confirm the save.
 
 This setting is certainly convenient, but wouldn't be such a good idea on a multi-tenant box. However, as I'm typically the only one who accessses my VPSs, and since I lock down sshd quite tightly (see notes below), the security concerns over doing this are mostly alleviated.
 
-One caveat to mention -- any publicly accessible network services (e.g. node.js scripts hosted on a cloud server) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
+One caveat to mention -- any publicly accessible network services (e.g. Node.js scripts hosted on a cloud server) should *not* be run as this sudo-enabled normal user, but as another non-sudoers user, or with the help of setuid/setgid and an unprivileged user/group like www-data.
 
 
 
@@ -115,7 +115,7 @@ I should seem something like:
 
     michael : michael sudo
 
-# Switch to the normal user and setup its .ssh directory
+# Switch to the normal user and setup .ssh
 
     # su - michael
 
@@ -310,7 +310,7 @@ From this point forward, I'll assume that at least the `git-core` package is ins
 
 # Install NVM
 
-Since I develop and deploy mainly with node.js, I like to install Tim Caswell's [NVM](https://github.com/creationix/nvm) tool to make my life easier:
+Since I develop and deploy mainly with Node.js, I like to install Tim Caswell's [NVM](https://github.com/creationix/nvm) tool to make my life easier:
 
     $ git clone git://github.com/creationix/nvm.git ~/.nvm
     ...
@@ -409,7 +409,7 @@ If I completed the above steps correctly, then with the "candy" theme, I should 
     michael@myvps [09:36:21] [~] 
     -> % 
 
-# Install some version of node.js and npm using NVM
+# Install some version of Node.js using NVM
 
 Upon the last logout / login cycle I probably got a warning like:
 
@@ -418,7 +418,7 @@ Upon the last logout / login cycle I probably got a warning like:
     ...
 
 
-That's NVM telling me I haven't installed the version of node.js that I told it to `use` in `~/.sh_nvm`. The situation can be remedied like so:
+That's NVM telling me I haven't installed the version of Node.js that I told it to `use` in `~/.sh_nvm`. The situation can be remedied like so:
 
     -> % nvm install v0.10.17
     ...
@@ -429,7 +429,7 @@ After the install has completed, I'll logout / login and the notice from NVM wil
     Now using node v0.10.17
     ...
 
-I can check the install locations of node.js and npm with:
+I can check the install locations of Node.js and npm with:
 
     -> % which node npm
     ...
