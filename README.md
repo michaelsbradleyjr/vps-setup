@@ -83,7 +83,12 @@ Set another ridiculously long password and store it in my local password manager
 
 ## Customize sudoers
 
-The `sudo` utility will enable my normal user account to run commands, modify files, etc. with root user privileges, but I want to modify the default sudoers config:
+The `sudo` utility will enable my normal user account to run commands, modify files, etc. with root user privileges. It's possible that your VPS doesn't have `sudo` installed by default, for example if it's Debian, so logged in as root you must install the `sudo` utility using the command
+
+    # apt install sudo
+    ...
+
+I want to modify the default sudoers config:
 
     # visudo
     ...
